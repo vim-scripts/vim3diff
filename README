@@ -1,0 +1,8 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=5223
+
+Already known DirDiff plugin (Http://www.vim.org/scripts/script.php?script_id=102) that compares only two directoris...
+
+This is improved version of script found at http://www.cnblogs.com/absolute8511/archive/2012/02/07/2342038.html and has functionality similar to DirDiff, but works for 3 or even more directories.
+
+Usage: ./vim3diff.py <dir1> <dir2> <dir3>
+
