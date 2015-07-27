@@ -39,7 +39,6 @@ def vimDirDiffN(diffdirs):
         for i in range(len(v)):
             for j in range (i+1,len(v)):
                 if not filecmp.cmp(os.path.join(v[i],f), os.path.join(v[j],f)):
-                    print "<>",f,v
                     files += [(f, v)]
                     break
             else:
@@ -54,7 +53,6 @@ def vimDirDiffN(diffdirs):
         dirline = '<' + dirsymbol + '>' + '=' + onedir
         fp.write(dirline + '\n')
         for i in range(len(files)):
-            print "!", files[i]
             (f, v) = files[i]
             for i in range(len(v)):
                 if v[i] == onedir:
@@ -66,7 +64,7 @@ def vimDirDiffN(diffdirs):
     for (f,v) in files:
         fp.write('    File: /'+f+' @ ' + ','.join(v)+'\n')
 
-
+    fp.flush()
     vim=subprocess.Popen('gvim -f -c ":DirDiffN ' + diffbuffer + '"',shell=True)
     vim.wait()
     fp.close()
